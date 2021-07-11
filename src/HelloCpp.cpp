@@ -4,6 +4,8 @@ using namespace std;
 
 int main()
 {
-  cout << "Hello Cpp!";
+  auto cpp_ver = __cplusplus;
+  cout << "Hello Cpp! \n";
+  cout << "C++ version number: " << cpp_ver << '\n';
 
 }
