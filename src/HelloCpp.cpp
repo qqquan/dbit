@@ -18,6 +18,20 @@ int main()
   cout << "data = 0x" << hex << data.to_ulong() << endl;
   cout << "Binary: " << data << endl;
 
+  string bit_str = data.to_string();
+  for( auto itr = std::next(bit_str.begin(),4); itr != bit_str.end(); std::advance( itr, 5 ) )
+  {
+    // cout << "size before insert: " << dec <<bit_str.size() << endl;
+    // cout << "iterator index before insert: " <<dec << itr - bit_str.begin() << endl;
+    itr = bit_str.insert(itr, ' ');
+    // cout << "size after insert: " << dec << bit_str.size() << endl;
+    // cout << "iterator index after insert: " <<dec << itr - bit_str.begin() << endl;
+    // cout<<"debug:  spaced bin: " << bit_str << endl;
+  }
+  // auto itr = bit_str.begin()+4;
+  // bit_str.insert(itr, ' ');
+  cout << "Spaced Binary: " << bit_str << endl;
+
   for(size_t i=0u; i < data.size(); i++ )
   {
     cout << " bit " << dec<< i<< ": " << data[i] << endl;
