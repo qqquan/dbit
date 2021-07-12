@@ -12,12 +12,13 @@ int main()
 
 
   constexpr auto bit_length = 32u;
+  
   bitset<bit_length>data {0x05a0af};
 
-  cout << "data = " << hex << data.to_ulong() << endl;
+  cout << "data = 0x" << hex << data.to_ulong() << endl;
   cout << "Binary: " << data << endl;
 
-  for(auto i=0u; i < bit_length; i++ )
+  for(size_t i=0u; i < data.size(); i++ )
   {
     cout << " bit " << dec<< i<< ": " << data[i] << endl;
   }
