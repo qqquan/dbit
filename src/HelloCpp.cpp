@@ -6,19 +6,12 @@
 
 using namespace std;
 
-
-
-int main()
+void parse_bit32(uint32_t val)
 {
-  auto cpp_ver = __cplusplus;
-
-  cout << "Hello Cpp! \n";
-  cout << "C++ version number: " << cpp_ver << '\n';
-
 
   constexpr auto bit_length = 32u;
   
-  bitset<bit_length>data {0x05a0af};
+  bitset<bit_length>data {val};
 
   cout << "data = 0x" << hex << data.to_ulong() << endl;
   cout << "Binary: " << data << endl;
@@ -26,22 +19,13 @@ int main()
   string bit_str = data.to_string();
   for( auto itr = std::next(bit_str.begin(),4); itr != bit_str.end(); std::advance( itr, 5 ) )
   {
-    // cout << "size before insert: " << dec <<bit_str.size() << endl;
-    // cout << "iterator index before insert: " <<dec << itr - bit_str.begin() << endl;
+
     itr = bit_str.insert(itr, ' ');
-    // cout << "size after insert: " << dec << bit_str.size() << endl;
-    // cout << "iterator index after insert: " <<dec << itr - bit_str.begin() << endl;
-    // cout<<"debug:  spaced bin: " << bit_str << endl;
+
   }
-  // auto itr = bit_str.begin()+4;
-  // bit_str.insert(itr, ' ');
+
   cout << "Spaced Binary: " << bit_str << endl;
 
-
-  for(size_t i=0u; i < data.size(); i++ )
-  {
-    cout << " bit " << dec<< i<< ": " << data[i] << endl;
-  }
 
   //build upper 16bit
   vector<std::string> vt_header16_31;
@@ -74,6 +58,17 @@ int main()
   vt_lower16.addRow(data[15], data[14],data[13],data[12],data[11],data[10],data[9],data[8],data[7],data[6],data[5],data[4],data[3],data[2],data[1],data[0]);
 
   vt_lower16.print(std::cout);
+
+}
+
+int main()
+{
+  auto cpp_ver = __cplusplus;
+
+  cout << "Hello Cpp! \n";
+  cout << "C++ version number: " << cpp_ver << '\n';
+
+  parse_bit32(0x05a0af);
 
 
 }
