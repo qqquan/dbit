@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.14)
 
 # set the project name
 project(HelloCpp)
 
-
-add_executable(${PROJECT_NAME} "")
+add_executable(${PROJECT_NAME} "") #declare target name
+add_subdirectory(src)
 
 set_target_properties(${PROJECT_NAME}
     PROPERTIES
@@ -13,5 +13,8 @@ set_target_properties(${PROJECT_NAME}
         CXX_EXTENSIONS NO
 )
 
-add_subdirectory(src)
+
+
+
+
 
