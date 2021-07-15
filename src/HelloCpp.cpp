@@ -41,6 +41,8 @@ void parse_bit32(uint32_t val)
   vt_upper16.addRow(data[15+16], data[14+16],data[13+16],data[12+16],data[11+16],data[10+16],data[9+16],data[8+16],data[7+16],data[6+16],data[5+16],data[4+16],data[3+16],data[2+16],data[1+16],data[0+16]);
 
   vt_upper16.print(std::cout);
+  
+  
   //build lower 16bit table
   vector<std::string> vt_header0_15;
 
@@ -64,16 +66,6 @@ void parse_bit32(uint32_t val)
 
 int main( int argc, char *argv[] )
 {
-
-    int count;
-
-    // Display each command-line argument.
-    cout << "\nCommand-line arguments:\n";
-    for( count = 0; count < argc; count++ )
-         cout << "  argv[" << count << "]   "
-                << argv[count] << "\n";
-
-
   uint32_t input_val = 0u;
   std::string input_arg{};
 
@@ -83,16 +75,13 @@ int main( int argc, char *argv[] )
   }
   else
   {
-
     std::cout<<"Please enter a number to parse as a 32bit value: " << endl;
     std::cin>>input_arg;
-
   }
+
   input_val = std::stoul(input_arg, nullptr, 0);
 
-
   parse_bit32(input_val);
-
 
 }
 
