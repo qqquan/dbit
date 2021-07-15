@@ -78,7 +78,7 @@ int main( int argc, char *argv[] )
     }
     else
     {
-      std::cout<<"Please enter a number to parse as a 32bit value: " << endl;
+      std::cout<<"Please enter a number to parse as a 32bit value (e.g. 1024, or 0xBEFF): " << endl;
       std::cin>>input_arg;
     }
 
