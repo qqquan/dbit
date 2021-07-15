@@ -13,7 +13,8 @@ void parse_bit32(uint32_t val)
   
   bitset<bit_length>data {val};
 
-  cout << "data = 0x" << hex << data.to_ulong() << endl;
+  cout << "Decimal: " << dec << data.to_ulong() << endl;
+  cout << "Hex: 0x" << hex << data.to_ulong() << endl;
   cout << "Binary: " << data << endl;
 
   string bit_str = data.to_string();
@@ -61,14 +62,36 @@ void parse_bit32(uint32_t val)
 
 }
 
-int main()
+int main( int argc, char *argv[] )
 {
-  auto cpp_ver = __cplusplus;
 
-  cout << "Hello Cpp! \n";
-  cout << "C++ version number: " << cpp_ver << '\n';
+    int count;
 
-  parse_bit32(0x05a0af);
+    // Display each command-line argument.
+    cout << "\nCommand-line arguments:\n";
+    for( count = 0; count < argc; count++ )
+         cout << "  argv[" << count << "]   "
+                << argv[count] << "\n";
+
+
+  uint32_t input_val = 0u;
+  std::string input_arg{};
+
+  if(argc==2)
+  {
+    input_arg = argv[1];
+  }
+  else
+  {
+
+    std::cout<<"Please enter a number to parse as a 32bit value: " << endl;
+    std::cin>>input_arg;
+
+  }
+  input_val = std::stoul(input_arg, nullptr, 0);
+
+
+  parse_bit32(input_val);
 
 
 }

@@ -7,7 +7,7 @@ include(FetchContent)
 FetchContent_Declare(
     variadic_table
     GIT_REPOSITORY https://github.com/friedmud/variadic_table.git
-    GIT_TAG        master
+    GIT_TAG        82fcf65c00c70afca95f71c0c77fba1982a20a86  #master 
 
 )
 
