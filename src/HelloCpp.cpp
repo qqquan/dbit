@@ -69,19 +69,26 @@ int main( int argc, char *argv[] )
   uint32_t input_val = 0u;
   std::string input_arg{};
 
-  if(argc==2)
+  while(1)
   {
-    input_arg = argv[1];
-  }
-  else
-  {
-    std::cout<<"Please enter a number to parse as a 32bit value: " << endl;
-    std::cin>>input_arg;
-  }
 
-  input_val = std::stoul(input_arg, nullptr, 0);
+    if(argc==2)
+    {
+      input_arg = argv[1];
+    }
+    else
+    {
+      std::cout<<"Please enter a number to parse as a 32bit value: " << endl;
+      std::cin>>input_arg;
+    }
 
-  parse_bit32(input_val);
+    input_val = std::stoul(input_arg, nullptr, 0);
+
+    parse_bit32(input_val);
+
+    argc = 0;
+    std::cout<<endl;
+  }
 
 }
 
