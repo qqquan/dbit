@@ -32,7 +32,15 @@ void parse_bit32(uint32_t val)
 
   for (int i = tbl_size+tbl_size-1; i>=tbl_size; i--)
   {
-    vt_header16_31.push_back("bit " + std::to_string(i) );
+    if((tbl_size+tbl_size-1) == i)
+    {
+      //only add "bit " header annotation to the first column
+      vt_header16_31.push_back("bit " + std::to_string(i) );
+    }
+    else
+    {
+      vt_header16_31.push_back( std::to_string(i) );
+    }
   }
 
   VariadicTable<int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int> vt_upper16(vt_header16_31);
@@ -52,7 +60,15 @@ void parse_bit32(uint32_t val)
     {
       width_compen.push_back(' '); //for single digit, add space to increase column width, compensating the limit in table template
     }
-    vt_header0_15.push_back("bit " + width_compen + std::to_string(i));
+    if((tbl_size-1) == i)
+    {
+      //only add "bit " header annotation to the first column
+      vt_header0_15.push_back("bit " + width_compen + std::to_string(i));
+    }
+    else
+    {
+      vt_header0_15.push_back(width_compen + std::to_string(i));
+    }
   }
 
   VariadicTable<int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int> vt_lower16(vt_header0_15);
