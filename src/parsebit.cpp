@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <bitset>
 
-#include <VariadicTable.h>
+#include "VariadicTable.h"
 
 using namespace std;
 
