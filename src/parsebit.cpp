@@ -4,19 +4,18 @@
 
 #include "VariadicTable.h"
 
-using namespace std;
 
 void parse_bit32(uint32_t val)
 {
   constexpr auto bit_length = 32u;
   
-  bitset<bit_length>data {val};
+  std::bitset<bit_length>data {val};
 
-  cout << "Decimal: " << dec << data.to_ulong() << endl;
-  cout << "Hex: 0x" << hex << data.to_ulong() << endl;
-  cout << "Binary: " << data << endl;
+  std::cout << "Decimal: " << std::dec << data.to_ulong() << std::endl;;
+  std::cout << "Hex: 0x" << std::hex << data.to_ulong() << std::endl;;
+  std::cout << "Binary: " << data << std::endl;;
 
-  string bit_str = data.to_string();
+  std::string bit_str = data.to_string();
   for( auto itr = std::next(bit_str.begin(),4); itr != bit_str.end(); std::advance( itr, 5 ) )
   {
 
@@ -24,12 +23,12 @@ void parse_bit32(uint32_t val)
 
   }
 
-  cout << "Spaced Binary: " << bit_str << endl;
+  std::cout << "Spaced Binary: " << bit_str << std::endl;;
 
 
   //build upper 16bit table
   constexpr uint8_t tbl_size = 16u;
-  vector<std::string> vt_header16_31;
+  std::vector<std::string> vt_header16_31;
 
   for (int i = tbl_size+tbl_size-1; i>=tbl_size; i--)
   {
@@ -44,7 +43,7 @@ void parse_bit32(uint32_t val)
   
   
   //build lower 16bit table
-  vector<std::string> vt_header0_15;
+  std::vector<std::string> vt_header0_15;
 
   for (int i = tbl_size-1; i>=0; i--)
   {
@@ -80,7 +79,7 @@ int main( int argc, char *argv[] )
     {
       std::cout<<"Please enter a number to parse as a 32bit value (e.g. 1024, or 0xBEFF): " ;
       std::cin>>input_arg;
-      std::cout<<endl;
+      std::cout<<std::endl;;
     }
 
     input_val = std::stoul(input_arg, nullptr, 0);
@@ -88,7 +87,7 @@ int main( int argc, char *argv[] )
     parse_bit32(input_val);
 
     argc = 0;
-    std::cout<<endl;
+    std::cout<<std::endl;;
   }
 
 }
