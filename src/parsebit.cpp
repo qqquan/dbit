@@ -86,7 +86,14 @@ int main( int argc, char *argv[] )
 
     parse_bit32(input_val);
 
-    argc = 0;
+    if (2 == argc)
+    {
+      break; //argument invocation skips looping and goes directly to program termination.
+    }
+    else
+    {
+      argc = 0;
+    }
     std::cout<<std::endl;;
   }
 
