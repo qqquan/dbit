@@ -28,16 +28,17 @@ void parse_bit32(uint32_t val)
 
 
   //build upper 16bit table
+  constexpr uint8_t tbl_size = 16u;
   vector<std::string> vt_header16_31;
 
-  for (int i = 15+16; i>=0+16; i--)
+  for (int i = tbl_size+tbl_size-1; i>=0+tbl_size; i--)
   {
     vt_header16_31.push_back("bit " + std::to_string(i) );
   }
 
   VariadicTable<int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int> vt_upper16(vt_header16_31);
 
-  vt_upper16.addRow(data[15+16], data[14+16],data[13+16],data[12+16],data[11+16],data[10+16],data[9+16],data[8+16],data[7+16],data[6+16],data[5+16],data[4+16],data[3+16],data[2+16],data[1+16],data[0+16]);
+  vt_upper16.addRow(data[15+tbl_size], data[14+tbl_size],data[13+tbl_size],data[12+tbl_size],data[11+tbl_size],data[10+tbl_size],data[9+tbl_size],data[8+tbl_size],data[7+tbl_size],data[6+tbl_size],data[5+tbl_size],data[4+tbl_size],data[3+tbl_size],data[2+tbl_size],data[1+tbl_size],data[0+tbl_size]);
 
   vt_upper16.print(std::cout);
   
@@ -45,7 +46,7 @@ void parse_bit32(uint32_t val)
   //build lower 16bit table
   vector<std::string> vt_header0_15;
 
-  for (int i = 15; i>=0; i--)
+  for (int i = tbl_size-1; i>=0; i--)
   {
     std::string width_compen{};
     if (i<10)
