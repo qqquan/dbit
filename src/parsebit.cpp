@@ -31,7 +31,7 @@ void parse_bit32(uint32_t val)
   constexpr uint8_t tbl_size = 16u;
   vector<std::string> vt_header16_31;
 
-  for (int i = tbl_size+tbl_size-1; i>=0+tbl_size; i--)
+  for (int i = tbl_size+tbl_size-1; i>=tbl_size; i--)
   {
     vt_header16_31.push_back("bit " + std::to_string(i) );
   }
@@ -78,8 +78,9 @@ int main( int argc, char *argv[] )
     }
     else
     {
-      std::cout<<"Please enter a number to parse as a 32bit value (e.g. 1024, or 0xBEFF): " << endl;
+      std::cout<<"Please enter a number to parse as a 32bit value (e.g. 1024, or 0xBEFF): " ;
       std::cin>>input_arg;
+      std::cout<<endl;
     }
 
     input_val = std::stoul(input_arg, nullptr, 0);
