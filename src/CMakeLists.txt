@@ -1,6 +1,6 @@
 target_sources(${PROJECT_NAME}
     PRIVATE
-        parsebit.cpp
+        dbits.cpp
 )
 
 

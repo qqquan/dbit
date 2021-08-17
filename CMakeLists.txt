@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 
 # set the project name
-project(parsebit)
+project(dbits)
 
 add_executable(${PROJECT_NAME} "") #declare target name
 add_subdirectory(src)
